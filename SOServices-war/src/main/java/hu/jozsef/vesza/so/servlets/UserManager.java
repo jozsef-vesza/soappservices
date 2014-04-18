@@ -27,12 +27,11 @@ public class UserManager extends HttpServlet
     private static final Logger log = Logger.getLogger(UserManager.class.getName());
     Objectify objectify = OfyService.ofy();
 
-    List<User> fetchedUsers = objectify.load().type(User.class).list();
-    boolean fetchedUsersExist = !fetchedUsers.isEmpty();
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        List<User> fetchedUsers = objectify.load().type(User.class).list();
+        boolean fetchedUsersExist = !fetchedUsers.isEmpty();
 
         log.severe(("Received GET request at " + this.getClass()));
         resp.setContentType("application/json ; charset=UTF-8");
@@ -95,6 +94,9 @@ public class UserManager extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        List<User> fetchedUsers = objectify.load().type(User.class).list();
+        boolean fetchedUsersExist = !fetchedUsers.isEmpty();
+        
         resp.setContentType("application/json ; charset=UTF-8");
         JSONObject parsedParams = RequestProcessor.getBody(req);
 
@@ -153,6 +155,7 @@ public class UserManager extends HttpServlet
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        List<User> fetchedUsers = objectify.load().type(User.class).list();
         log.severe("Deleting all users");
         objectify.delete().entities(fetchedUsers).now();
         resp.getWriter().print("All users deleted");

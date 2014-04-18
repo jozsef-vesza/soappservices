@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.googlecode.objectify.Objectify;
+import java.util.logging.Level;
 
 public class FactoryServlet extends HttpServlet
 {
@@ -35,7 +36,7 @@ public class FactoryServlet extends HttpServlet
 	{
 		if (!fetchedEventsExist)
 		{
-			List<Event> events = EventParser.readDataFromJSON();
+			List<Event> events = EventParser.readDataFromJSON(this.getServletContext());
 			for (Event event : events)
 			{
 				for (Table table : event.getLocation().getTables())
@@ -43,7 +44,7 @@ public class FactoryServlet extends HttpServlet
 					objectify.save().entity(table).now();
 				}
 				objectify.save().entity(event.getLocation()).now();
-				log.severe("Created event: " + event.getEventTitle());
+				log.log(Level.SEVERE, "Created event: {0}", event.getEventTitle());
 			}
 			objectify.save().entities(events).now();
 			
@@ -56,10 +57,10 @@ public class FactoryServlet extends HttpServlet
 		
 		if (!fetchedMealsExist)
 		{
-			List<Meal> meals = MealParser.readListFromJSON();
+			List<Meal> meals = MealParser.readListFromJSON(this.getServletContext());
 			for (Meal meal : meals)
 			{
-				log.severe("Creating meal: " + meal.getName());
+				log.log(Level.SEVERE, "Creating meal: {0}", meal.getName());
 			}
 			objectify.save().entities(meals).now();
 			System.out.println("Creating meals..");

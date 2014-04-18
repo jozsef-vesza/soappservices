@@ -12,22 +12,23 @@ import com.googlecode.objectify.ObjectifyService;
 
 public class OfyService
 {
-	static
-	{
-		ObjectifyService.register(Event.class);
-		ObjectifyService.register(User.class);
-		ObjectifyService.register(Meal.class);
-		ObjectifyService.register(Location.class);
-		ObjectifyService.register(Table.class);
-	}
-	
-	public static Objectify ofy()
-	{
-		return ObjectifyService.ofy();
-	}
-	
-	public static ObjectifyFactory factory()
-	{
-		return ObjectifyService.factory();
-	}
+
+    static
+    {
+        ObjectifyService.register(Event.class);
+        ObjectifyService.register(User.class);
+        ObjectifyService.register(Meal.class);
+        ObjectifyService.register(Location.class);
+        ObjectifyService.register(Table.class);
+    }
+
+    public static Objectify ofy()
+    {
+        return ObjectifyService.ofy();
+    }
+
+    public static ObjectifyFactory factory()
+    {
+        return ObjectifyService.factory();
+    }
 }

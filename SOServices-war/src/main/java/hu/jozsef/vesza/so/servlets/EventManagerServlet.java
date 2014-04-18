@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.googlecode.objectify.Objectify;
+import java.util.logging.Level;
 
 public class EventManagerServlet extends HttpServlet
 {
@@ -36,7 +37,7 @@ public class EventManagerServlet extends HttpServlet
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{	
-		log.severe("Received GET request at " + this.getClass());
+		log.log(Level.SEVERE, "Received GET request at {0}", this.getClass());
 		resp.setContentType("application/json ; charset=UTF-8");
 		if (!fetchedEventsExist)
 		{
@@ -48,7 +49,7 @@ public class EventManagerServlet extends HttpServlet
 			log.severe("Everything OK, should return list of events");
 			for (Event event : fetchedEvents)
 			{
-				log.severe("Loaded event: " + event.getEventTitle());
+				log.log(Level.SEVERE, "Loaded event: {0}", event.getEventTitle());
 			}
 			String returnString = EventParser.writeListToJSON(fetchedEvents);
 			resp.getWriter().print(returnString);
@@ -58,7 +59,7 @@ public class EventManagerServlet extends HttpServlet
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
-		log.severe("Received PUT request at " + this.getClass());
+		log.log(Level.SEVERE, "Received PUT request at {0}", this.getClass());
 		resp.setContentType("application/json ; charset=UTF-8");
 	    JSONObject parsedParams = RequestProcessor.getBody(req);
 		

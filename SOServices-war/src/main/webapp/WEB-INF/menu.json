@@ -1,0 +1,183 @@
+[
+  {
+    "name": "Cézár saláta",
+    "description": "A darabolt jégsalátát megízesítjük egy szardellás majonéz öntettel, a tetejére parmezánforgácsokat reszelünk. Fokhagymás zsemlekockával tálaljuk.",
+    "price": 1090,
+    "rating": 1,
+    "totalRatings": 5,
+    "category": "starter",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/872/00001_63958_400x300_normal.jpg"
+  },
+  {
+    "name": "Görög saláta",
+    "description": "Kockára vágott uborkát, paprikát, lilahagymát, paradicsomot és olívabogyót beízesítjük enyhén ecetesre és édesre. A tetejére kockára vágott feta sajtot teszünk.",
+    "price": 1290,
+    "rating": 4,
+    "totalRatings": 10,
+    "category": "starter",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/92/00001_78490_400x300_normal.jpg"
+  },
+  {
+    "name": "Grillezett kecskesajt",
+    "description": "A lollo biancot, piros tölgyfa- és radiccio salátát, julienne (vékonyra vágott) répát, paradicsomot összekeverjük citromos olivás öntettel, majd a grillezett kecskesajt mellé rakjuk",
+    "price": 1690,
+    "rating": 4,
+    "totalRatings": 4,
+    "category": "starter",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/995/00001_23024_400x300_normal.jpg"
+  },
+  {
+    "name": "Hideg gyümölcsleves",
+    "description": "Idény szerinti gyümölcsökből készítjük, és mandulába forgatott túrógombócot adunk hozzá.",
+    "price": 650,
+    "rating": 5,
+    "totalRatings": 100,
+    "category": "soup",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/249/00001_97010_400x300_normal.jpg"
+  },
+  {
+    "name": "Húsleves gazdagon",
+    "description": "Klasszikus húsleves, amibe betétként csigatésztát és a levesbe főtt, kockára vágott marhahúst és sárgarépát teszünk.",
+    "price": 850,
+    "rating": 3,
+    "totalRatings": 30,
+    "category": "soup",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/417/00001_23841_400x300_normal.jpg"
+  },
+  {
+    "name": "Angolmustáros tarjaszelet",
+    "description": "A kiklopfolt tarjaszeleteket fűszerezzük, majd vékonyan bekenjük mustárral. Napraforgó olajban pácoljuk, majd rostlapon sütjük",
+    "price": 990,
+    "rating": 4,
+    "totalRatings": 10,
+    "category": "main",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/120/00001_12999_400x300_normal.jpg"
+  },
+  {
+    "name": "Baconos csirkenyárs",
+    "description": "A csirkemellet kiklopfoljuk, fűszerezzük és a bacon szeleteket ráhelyezve felgöngyöljük. Szeletelés után nyársra fűzzük, lila hagymával váltogatva.",
+    "price": 990,
+    "rating": 5,
+    "totalRatings": 22,
+    "category": "main",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/121/00001_41473_400x300_normal.jpg"
+  },
+  {
+    "name": "Bajor szűzpecsenye",
+    "description": "A szűzpecsenyét kiklopfoljuk, fűszerezzük és megkenjük a hagymás, mustáros töltelékkel. Olajban pácoljuk majd rostlapon sütjük.",
+    "price": 1490,
+    "rating": 3,
+    "totalRatings": 9,
+    "category": "main",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/122/00001_50577_400x300_normal.jpg"
+  },
+  {
+    "name": "Édes chilis csirkeszárny",
+    "description": "Rostlapon pirosra sütjük az előfőzött kentucky csirkeszárnyat, majd édes chili szószt öntünk rá.",
+    "price": 850,
+    "rating": 4,
+    "totalRatings": 567,
+    "category": "main",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/998/00001_24792_400x300_normal.jpg"
+  },
+  {
+    "name": "Gesztenyepüré",
+    "description": "A gesztenyepürét ízesítjük, majd lereszeljük, és tejszínhabbal díszítjük.",
+    "price": 390,
+    "rating": 3,
+    "totalRatings": 32,
+    "category": "dessert",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/174/00002_24408_400x300_normal.jpg"
+  },
+  {
+    "name": "Túrós palacsinta vanília öntettel",
+    "description": "Citrom és narancshéjjal, valamint vaníliás cukorral készített töltelékkel töltjük meg a palacsintákat. Vaníliamártást adok mellé.",
+    "price": 450,
+    "rating": 5,
+    "totalRatings": 43,
+    "category": "dessert",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/181/00001_39278_400x300_normal.jpg"
+  },
+  {
+    "name": "Sárgabarack lekváros palacsinta ",
+    "description": "A legkedveltebb magyar hagyományos desszert, amibe házilag főzött sárgabarack lekvárt teszünk",
+    "price": 350,
+    "rating": 4,
+    "totalRatings": 15,
+    "category": "dessert",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/179/00001_20812_400x300_normal.jpg"
+  },
+  {
+    "name": "Somlói galuska",
+    "description": "Csokoládés vaniliás piskóta vanilia krémmel rétegezve, diókrémmel izesítve csoki öntettel locsolva tejszinhabbal tálalva.",
+    "price": 550,
+    "rating": 5,
+    "totalRatings": 4,
+    "category": "dessert",
+    "image" : "http://www.trofeaonline.com/Content/webshop_items/180/00001_28737_400x300_normal.jpg"
+  },
+  {
+    "name": "Almalé - 1,5 L",
+    "description": "",
+    "price": 360,
+    "rating": 2,
+    "totalRatings": 53,
+    "category": "drink"
+  },
+  {
+    "name": "Lipton ice tea barackos - 1,5L",
+    "description": "",
+    "price": 450,
+    "rating": 4,
+    "totalRatings": 12,
+    "category": "drink"
+  },
+  {
+    "name": "Kristályviz - szénsavas - 1,5 L ",
+    "description": "",
+    "price": 220,
+    "rating": 4,
+    "totalRatings": 10,
+    "category": "drink"
+  },
+  {
+    "name": "Schweppes narancs - 1 L",
+    "description": "",
+    "price": 360,
+    "rating": 3,
+    "totalRatings": 5,
+    "category": "drink"
+  },
+  {
+    "name": "Szalon sör - 0,5 L ",
+    "description": "",
+    "price": 250,
+    "rating": 5,
+    "totalRatings": 5,
+    "category": "alcoholic"
+  },
+  {
+    "name": "Finlandia - 1 L",
+    "description": "",
+    "price": 3250,
+    "rating": 5,
+    "totalRatings": 5,
+    "category": "alcoholic"
+  },
+  {
+    "name": "Gordon's Gin - 0.7 L",
+    "description": "",
+    "price": 5590,
+    "rating": 5,
+    "totalRatings": 5,
+    "category": "alcoholic"
+  },
+  {
+    "name": "Jack Daniel's - 1 L ",
+    "description": "",
+    "price": 9150,
+    "rating": 4,
+    "totalRatings": 5,
+    "category": "alcoholic"
+  }
+]

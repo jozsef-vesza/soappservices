@@ -21,66 +21,69 @@ import java.util.logging.Level;
 
 public class FactoryServlet extends HttpServlet
 {
-	private static final long serialVersionUID = 197887461429670874L;
-	private static final Logger log = Logger.getLogger(UserManager.class.getName());
-	Objectify objectify = OfyService.ofy();
 
-	List<Event> fetchedEvents = objectify.load().type(Event.class).list();
-	boolean fetchedEventsExist = !fetchedEvents.isEmpty();
-	
-	List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
-	boolean fetchedMealsExist = !fetchedMeals.isEmpty();
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{
-		if (!fetchedEventsExist)
-		{
-			List<Event> events = EventParser.readDataFromJSON(this.getServletContext());
-			for (Event event : events)
-			{
-				for (Table table : event.getLocation().getTables())
-				{
-					objectify.save().entity(table).now();
-				}
-				objectify.save().entity(event.getLocation()).now();
-				log.log(Level.SEVERE, "Created event: {0}", event.getEventTitle());
-			}
-			objectify.save().entities(events).now();
-			
-			resp.getWriter().print("Events generated\n");
-		}
-		else
-		{
-			resp.getWriter().print("Events already exist\n");
-		}
-		
-		if (!fetchedMealsExist)
-		{
-			List<Meal> meals = MealParser.readListFromJSON(this.getServletContext());
-			for (Meal meal : meals)
-			{
-				log.log(Level.SEVERE, "Creating meal: {0}", meal.getName());
-			}
-			objectify.save().entities(meals).now();
-			System.out.println("Creating meals..");
-			resp.getWriter().print("Meals generated\n");
-		}
-		else
-		{
-			resp.getWriter().print("Meals already exist\n");
-		}
-	}
-	
-	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{
-		objectify.delete().entities(fetchedEvents).now();
-		log.severe("Deleting events...");
-		resp.getWriter().print("Events deleted\n");
-		objectify.delete().entities(fetchedMeals).now();
-		log.severe("Deleting existing meals..");
-		resp.getWriter().print("Meals deleted\n");
-	}
+    private static final long serialVersionUID = 197887461429670874L;
+    private static final Logger log = Logger.getLogger(UserManager.class.getName());
+    Objectify objectify = OfyService.ofy();
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
+        List<Event> fetchedEvents = objectify.load().type(Event.class).list();
+        boolean fetchedEventsExist = !fetchedEvents.isEmpty();
+
+        List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
+        boolean fetchedMealsExist = !fetchedMeals.isEmpty();
+        if (!fetchedEventsExist)
+        {
+            List<Event> events = EventParser.readDataFromJSON(this.getServletContext());
+            for (Event event : events)
+            {
+                for (Table table : event.getLocation().getTables())
+                {
+                    objectify.save().entity(table).now();
+                }
+                objectify.save().entity(event.getLocation()).now();
+                log.log(Level.SEVERE, "Created event: {0}", event.getEventTitle());
+            }
+            objectify.save().entities(events).now();
+
+            resp.getWriter().print("Events generated\n");
+        } else
+        {
+            resp.getWriter().print("Events already exist\n");
+        }
+
+        if (!fetchedMealsExist)
+        {
+            List<Meal> meals = MealParser.readListFromJSON(this.getServletContext());
+            for (Meal meal : meals)
+            {
+                log.log(Level.SEVERE, "Creating meal: {0}", meal.getName());
+            }
+            objectify.save().entities(meals).now();
+            System.out.println("Creating meals..");
+            resp.getWriter().print("Meals generated\n");
+        } else
+        {
+            resp.getWriter().print("Meals already exist\n");
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
+        List<Event> fetchedEvents = objectify.load().type(Event.class).list();
+        boolean fetchedEventsExist = !fetchedEvents.isEmpty();
+
+        List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
+        boolean fetchedMealsExist = !fetchedMeals.isEmpty();
+        objectify.delete().entities(fetchedEvents).now();
+        log.severe("Deleting events...");
+        resp.getWriter().print("Events deleted\n");
+        objectify.delete().entities(fetchedMeals).now();
+        log.severe("Deleting existing meals..");
+        resp.getWriter().print("Meals deleted\n");
+    }
 
 }

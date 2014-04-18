@@ -1,6 +1,8 @@
 package hu.jozsef.vesza.so.servlets;
 
 import hu.jozsef.vesza.so.model.User;
+import hu.jozsef.vesza.so.model.Event;
+import hu.jozsef.vesza.so.model.Meal;
 import hu.jozsef.vesza.so.utils.ErrorManager;
 import hu.jozsef.vesza.so.utils.OfyService;
 import hu.jozsef.vesza.so.utils.RequestProcessor;
@@ -70,6 +72,7 @@ public class UserManager extends HttpServlet
                     {
                         user.getUsername(), user.getPassword()
                     });
+
                     loggedInUser = user;
                 }
             }
@@ -78,13 +81,40 @@ public class UserManager extends HttpServlet
             {
                 log.severe("User not found");
                 ErrorManager.respondWithError("badCredentials", resp);
-            } else
+            } 
+            else
             {
                 log.log(Level.SEVERE, "Everything OK, should return user: {0}", loggedInUser.getUsername());
+                if (loggedInUser.getOrderedEvents() != null)
+                {
+                    log.log(Level.SEVERE, "User has ordered events");
+                    for (Event event : loggedInUser.getOrderedEvents())
+                    {
+                        log.log(Level.SEVERE, "\nEvent: {0}", event.getEventTitle());
+                    }
+                } 
+                else
+                {
+                    log.log(Level.SEVERE, "User has no ordered events");
+                }
+
+                if (loggedInUser.getOrderedMeals() != null)
+                {
+                    log.log(Level.SEVERE, "User has ordered meals");
+                    for (Meal meal : loggedInUser.getOrderedMeals())
+                    {
+                        log.log(Level.SEVERE, "\nMeal: {0}", meal.getName());
+                    }
+                } 
+                else
+                {
+                    log.log(Level.SEVERE, "User has no ordered meals");
+                }
                 String returnString = UserParser.writeSingleUserToJSON(loggedInUser);
                 resp.getWriter().print(returnString);
             }
-        } else
+        } 
+        else
         {
             log.severe("Users do not exist in the datastore");
             ErrorManager.respondWithError("userDoesNotExist", resp);
@@ -96,7 +126,7 @@ public class UserManager extends HttpServlet
     {
         List<User> fetchedUsers = objectify.load().type(User.class).list();
         boolean fetchedUsersExist = !fetchedUsers.isEmpty();
-        
+
         resp.setContentType("application/json ; charset=UTF-8");
         JSONObject parsedParams = RequestProcessor.getBody(req);
 

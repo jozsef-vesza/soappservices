@@ -17,41 +17,43 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.googlecode.objectify.Objectify;
+import java.util.logging.Level;
 
 public class MealRatingManagerServlet extends HttpServlet
 {
-	private static final long serialVersionUID = -6591433290250369455L;
-	private static final Logger log = Logger.getLogger(MealRatingManagerServlet.class.getName());
-	Objectify objectify = OfyService.ofy();
-	List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
-	boolean fetchedMealsExist = !fetchedMeals.isEmpty();
 
-	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-	{
-		log.severe("Received PUT request at " + this.getClass());
-		resp.setContentType("application/json ; charset=UTF-8");
-		JSONObject parsedParams = RequestProcessor.getBody(req);
-		ArrayList<JSONObject> meals = (ArrayList<JSONObject>) parsedParams.get("meals");
-		
-		for (JSONObject meal : meals)
-		{
-			String name = (String) meal.get("name");
-			int rating = (int) (long) meal.get("rating");
-			
-			for (Meal fetchedMeal : fetchedMeals)
-			{
-				if (name.equals(fetchedMeal.getName()))
-				{
-					log.severe("Updating ratig for meal: " + fetchedMeal.getName());
-					int avgRating = fetchedMeal.getRating() / fetchedMeal.getTotalRatings();
-					fetchedMeal.setTotalRatings(fetchedMeal.getTotalRatings() + 1);
-					avgRating += rating;
-					fetchedMeal.setRating(avgRating / fetchedMeal.getTotalRatings());
-					log.severe("Everything OK, meal rating updated");
-					objectify.save().entities(fetchedMeal).now();
-				}
-			}
-		}
-	}
+    private static final long serialVersionUID = -6591433290250369455L;
+    private static final Logger log = Logger.getLogger(MealRatingManagerServlet.class.getName());
+    Objectify objectify = OfyService.ofy();
+    List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
+    boolean fetchedMealsExist = !fetchedMeals.isEmpty();
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
+        log.log(Level.SEVERE, "Received PUT request at {0}", this.getClass());
+        resp.setContentType("application/json ; charset=UTF-8");
+        JSONObject parsedParams = RequestProcessor.getBody(req);
+        ArrayList<JSONObject> meals = (ArrayList<JSONObject>) parsedParams.get("meals");
+
+        for (JSONObject meal : meals)
+        {
+            String name = (String) meal.get("name");
+            int rating = (int) (long) meal.get("rating");
+
+            for (Meal fetchedMeal : fetchedMeals)
+            {
+                if (name.equals(fetchedMeal.getName()))
+                {
+                    log.log(Level.SEVERE, "Updating ratig for meal: {0}", fetchedMeal.getName());
+                    int avgRating = fetchedMeal.getRating() / fetchedMeal.getTotalRatings();
+                    fetchedMeal.setTotalRatings(fetchedMeal.getTotalRatings() + 1);
+                    avgRating += rating;
+                    fetchedMeal.setRating(avgRating / fetchedMeal.getTotalRatings());
+                    log.severe("Everything OK, meal rating updated");
+                    objectify.save().entities(fetchedMeal).now();
+                }
+            }
+        }
+    }
 }

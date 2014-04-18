@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.googlecode.objectify.Objectify;
+import java.util.logging.Level;
 
 public class MealManagerServlet extends HttpServlet
 {
@@ -36,7 +37,7 @@ public class MealManagerServlet extends HttpServlet
         List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
         boolean fetchedMealsExist = !fetchedMeals.isEmpty();
 
-        log.severe("Received GET request at " + this.getClass());
+        log.log(Level.SEVERE, "Received GET request at {0}", this.getClass());
         resp.setContentType("application/json ; charset=UTF-8");
         if (!fetchedMealsExist)
         {
@@ -55,7 +56,7 @@ public class MealManagerServlet extends HttpServlet
     {
         List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
         boolean fetchedMealsExist = !fetchedMeals.isEmpty();
-        log.severe("Received PUT request at " + this.getClass());
+        log.log(Level.SEVERE, "Received PUT request at {0}", this.getClass());
         resp.setContentType("application/json ; charset=UTF-8");
         JSONObject parsedParams = RequestProcessor.getBody(req);
 
@@ -72,7 +73,7 @@ public class MealManagerServlet extends HttpServlet
                 int amount = (int) (long) meal.get("amount");
                 if (name.equals(fetched.getName()))
                 {
-                    log.severe("Adding Meal: " + name + " to User: " + activeUser.getUsername());
+                    log.log(Level.SEVERE, "Adding Meal: {0} to User: {1}", new Object[]{name, activeUser.getUsername()});
                     activeUser.addToMeals(fetched, amount);
                 }
             }

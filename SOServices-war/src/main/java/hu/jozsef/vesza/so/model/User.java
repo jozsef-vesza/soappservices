@@ -52,7 +52,7 @@ public class User
 
 		if (this.orderedEvents == null)
 		{
-			this.orderedEvents = new ArrayList<Event>();
+			this.orderedEvents = new ArrayList<>();
 		}
 
 		this.orderedEvents.add(eventToAdd);
@@ -72,7 +72,7 @@ public class User
 		
 		if (this.orderedMeals == null)
 		{
-			this.orderedMeals = new ArrayList<Meal>();
+			this.orderedMeals = new ArrayList<>();
 		}
 		this.orderedMeals.add(mealToAdd);
 	}

@@ -6,12 +6,9 @@ import hu.jozsef.vesza.so.utils.ErrorManager;
 import hu.jozsef.vesza.so.utils.EventParser;
 import hu.jozsef.vesza.so.utils.OfyService;
 import hu.jozsef.vesza.so.utils.RequestProcessor;
-import hu.jozsef.vesza.so.utils.UserParser;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -87,15 +84,16 @@ public class EventManagerServlet extends HttpServlet
 
         if (bothEntitiesFound)
         {
-            log.log(Level.SEVERE, "User: {0} Event: {1} both found", new Object[]{activeUser.getUsername(), foundEvent.getEventTitle()});
-//            Event returnEvent = activeUser.addToEvents(foundEvent, amount, tableId);
+            log.log(Level.SEVERE, "User: {0} Event: {1} both found", new Object[]
+            {
+                activeUser.getUsername(), foundEvent.getEventTitle()
+            });
             Event returnEvent = new Event(foundEvent);
             returnEvent.setTicketsPurchased(amount);
             returnEvent.setSelectedTable(tableId);
             returnEvent.setPaid(true);
             returnEvent.setOwner(Ref.create(activeUser));
             objectify.save().entity(returnEvent).now();
-//            objectify.save().entity(activeUser).now();
             String returnString = EventParser.writeSingleEventToJSON(returnEvent);
             log.severe("Everything OK, should order ticket");
             resp.getWriter().print(returnString);
@@ -114,7 +112,7 @@ public class EventManagerServlet extends HttpServlet
         log.log(Level.SEVERE, "Received DELETE request at {0}", this.getClass());
         Long eventId = new Long(req.getParameter("event"));
         Long userId = new Long(req.getParameter("user"));
-        
+
         Event eventToBeRemoved = objectify.load().type(Event.class).id(eventId).now();
         objectify.delete().entity(eventToBeRemoved).now();
         log.log(Level.SEVERE, "Removed event with title: {0}", eventToBeRemoved.getEventTitle());

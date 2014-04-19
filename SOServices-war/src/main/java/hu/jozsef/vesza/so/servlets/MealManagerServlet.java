@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.googlecode.objectify.Objectify;
+import com.googlecode.objectify.Ref;
 import java.util.logging.Level;
 
 public class MealManagerServlet extends HttpServlet
@@ -46,7 +47,16 @@ public class MealManagerServlet extends HttpServlet
         } else
         {
             log.severe("Everything OK, should return list of meals");
-            String returnString = MealParser.writeListToJSON(fetchedMeals);
+            List<Meal> defaultMeals = new ArrayList<>();
+            for (Meal meal : fetchedMeals)
+            {
+                if (meal.getOwner() == null)
+                {
+                    log.log(Level.SEVERE, "Loaded meal: {0}", meal.getName());
+                    defaultMeals.add(meal);
+                }
+            }
+            String returnString = MealParser.writeListToJSON(defaultMeals);
             resp.getWriter().print(returnString);
         }
     }
@@ -60,26 +70,34 @@ public class MealManagerServlet extends HttpServlet
         resp.setContentType("application/json ; charset=UTF-8");
         JSONObject parsedParams = RequestProcessor.getBody(req);
 
-        Long userId = new Long((long) parsedParams.get("user"));
+        Long userId = (long) parsedParams.get("user");
         ArrayList<JSONObject> meals = (ArrayList<JSONObject>) parsedParams.get("meals");
 
         User activeUser = objectify.load().type(User.class).id(userId).now();
 
         for (JSONObject meal : meals)
         {
+            String name = (String) meal.get("name");
+            int amount = (int) (long) meal.get("amount");
+            
             for (Meal fetched : fetchedMeals)
             {
-                String name = (String) meal.get("name");
-                int amount = (int) (long) meal.get("amount");
                 if (name.equals(fetched.getName()))
                 {
-                    log.log(Level.SEVERE, "Adding Meal: {0} to User: {1}", new Object[]{name, activeUser.getUsername()});
-                    activeUser.addToMeals(fetched, amount);
+                    log.log(Level.SEVERE, "Adding Meal: {0} to User: {1}", new Object[]
+                    {
+                        name, activeUser.getUsername()
+                    });
+                    
+                    Meal mealToAdd = new Meal(fetched);
+                    
+                    mealToAdd.setOwner(Ref.create(activeUser));
+                    mealToAdd.setAmount(amount);
+                    objectify.save().entity(mealToAdd).now();
                 }
             }
         }
 
-        objectify.save().entity(activeUser).now();
 
         log.severe("Everything OK, should send order");
         String returnString = UserParser.writeSingleUserToJSON(activeUser);

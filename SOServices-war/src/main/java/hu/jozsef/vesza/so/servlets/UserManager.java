@@ -81,10 +81,44 @@ public class UserManager extends HttpServlet
             {
                 log.severe("User not found");
                 ErrorManager.respondWithError("badCredentials", resp);
-            } 
-            else
+            } else
             {
                 log.log(Level.SEVERE, "Everything OK, should return user: {0}", loggedInUser.getUsername());
+                List<Event> fetchedEvents = objectify.load().type(Event.class).list();
+                boolean fetchedEventsExist = !fetchedEvents.isEmpty();
+
+                if (fetchedEventsExist)
+                {
+                    for (Event event : fetchedEvents)
+                    {
+                        if (event.getOwner() != null)
+                        {
+                            if (event.getOwner().get().getIdentifier() == loggedInUser.getIdentifier())
+                            {
+                                loggedInUser.addToEvents(event);
+                            }
+
+                        }
+                    }
+                }
+
+                List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
+                boolean fetchedMealsExist = !fetchedMeals.isEmpty();
+
+                if (fetchedMealsExist)
+                {
+                    for (Meal meal : fetchedMeals)
+                    {
+                        if (meal.getOwner() != null)
+                        {
+                            if (meal.getOwner().get().getIdentifier() == loggedInUser.getIdentifier())
+                            {
+                                loggedInUser.addToMeals(meal);
+                            }
+                        }
+                    }
+                }
+
                 if (loggedInUser.getOrderedEvents() != null)
                 {
                     log.log(Level.SEVERE, "User has ordered events");
@@ -92,8 +126,7 @@ public class UserManager extends HttpServlet
                     {
                         log.log(Level.SEVERE, "\nEvent: {0}", event.getEventTitle());
                     }
-                } 
-                else
+                } else
                 {
                     log.log(Level.SEVERE, "User has no ordered events");
                 }
@@ -105,16 +138,14 @@ public class UserManager extends HttpServlet
                     {
                         log.log(Level.SEVERE, "\nMeal: {0}", meal.getName());
                     }
-                } 
-                else
+                } else
                 {
                     log.log(Level.SEVERE, "User has no ordered meals");
                 }
                 String returnString = UserParser.writeSingleUserToJSON(loggedInUser);
                 resp.getWriter().print(returnString);
             }
-        } 
-        else
+        } else
         {
             log.severe("Users do not exist in the datastore");
             ErrorManager.respondWithError("userDoesNotExist", resp);

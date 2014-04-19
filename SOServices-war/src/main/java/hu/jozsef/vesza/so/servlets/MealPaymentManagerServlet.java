@@ -35,46 +35,36 @@ public class MealPaymentManagerServlet extends HttpServlet
     {
         log.log(Level.SEVERE, "Received DELETE request at {0}", this.getClass());
         resp.setContentType("application/json ; charset=UTF-8");
-        JSONObject parsedParams = RequestProcessor.getBody(req);
+//        JSONObject parsedParams = RequestProcessor.getBody(req);
 
         // Get the active user from the request
-        Long userId = (long) parsedParams.get("user");
+        Long userId = new Long(req.getParameter("user"));
 
         // Get the meals to remove from the request
-        ArrayList<JSONObject> mealsFromRequest = (ArrayList<JSONObject>) parsedParams.get("meals");
-
+//        ArrayList<JSONObject> mealsFromRequest = (ArrayList<JSONObject>) parsedParams.get("meals");
         // Load the correct user from store
         User activeUser = objectify.load().type(User.class).id(userId).now();
+        log.log(Level.SEVERE, "Check for user: {0}", activeUser);
 
-        // List the meals of the loaded user (make a local copy)
-        List<Meal> mealsOfActiveUser = activeUser.getOrderedMeals();
+        List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
+        boolean fetchedMealsExist = !fetchedMeals.isEmpty();
 
-        // For each parsed meal from the request
-        Meal mealToBeRemoved = null;
-        for (JSONObject requestMeal : mealsFromRequest)
+        if (fetchedMealsExist)
         {
-            // Iterate through the user's ordered meals
-            Iterator<Meal> mealIterator = mealsOfActiveUser.iterator();
-            while (mealIterator.hasNext())
+            for (Meal meal : fetchedMeals)
             {
-                // If the names of the two meals match, remove the one in the user's array
-                if (mealIterator.next().getName().equals(requestMeal.get("name")))
+                if (meal.getOwner() != null)
                 {
-                    log.log(Level.SEVERE, "Removing Meal: {0}from User: {1}", new Object[]
+                    if (meal.getOwner().get().getIdentifier() == activeUser.getIdentifier())
                     {
-                        requestMeal.get("name"), activeUser.getUsername()
-                    });
-                    mealIterator.remove();
+                        objectify.delete().entity(meal).now();
+                        log.log(Level.SEVERE, "Removed meal with id: {0}", meal.getIdentifier());
+                    }
                 }
             }
-            Long removeId = new Long((String) requestMeal.get("identifier"));
-            mealToBeRemoved = objectify.load().type(Meal.class).id(removeId).now();
-            log.log(Level.SEVERE, "Removed meal with id: {0}", removeId);
-            objectify.delete().entity(mealToBeRemoved).now();
         }
 
         log.severe("Everything OK, meal should be removed");
-        objectify.save().entity(activeUser).now();
 
         Map<String, String> responseMap = new HashMap<>();
         responseMap.put("response", "successful payment");

@@ -25,12 +25,12 @@ public class MealRatingManagerServlet extends HttpServlet
     private static final long serialVersionUID = -6591433290250369455L;
     private static final Logger log = Logger.getLogger(MealRatingManagerServlet.class.getName());
     Objectify objectify = OfyService.ofy();
-    List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
-    boolean fetchedMealsExist = !fetchedMeals.isEmpty();
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        List<Meal> fetchedMeals = objectify.load().type(Meal.class).list();
+        boolean fetchedMealsExist = !fetchedMeals.isEmpty();
         log.log(Level.SEVERE, "Received PUT request at {0}", this.getClass());
         resp.setContentType("application/json ; charset=UTF-8");
         JSONObject parsedParams = RequestProcessor.getBody(req);

@@ -82,5 +82,11 @@ public class User
         return identifier;
     }
     
+    public void cleanup()
+    {
+        this.orderedEvents = null;
+        this.orderedMeals = null;
+    }
+    
     
 }

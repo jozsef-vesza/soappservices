@@ -143,6 +143,7 @@ public class UserManager extends HttpServlet
                     log.log(Level.SEVERE, "User has no ordered meals");
                 }
                 String returnString = UserParser.writeSingleUserToJSON(loggedInUser);
+                loggedInUser.cleanup();
                 resp.getWriter().print(returnString);
             }
         } else

@@ -93,6 +93,8 @@ public class MealManagerServlet extends HttpServlet
                     
                     mealToAdd.setOwner(Ref.create(activeUser));
                     mealToAdd.setAmount(amount);
+                    
+                    activeUser.addToMeals(mealToAdd);
                     objectify.save().entity(mealToAdd).now();
                 }
             }
@@ -101,6 +103,7 @@ public class MealManagerServlet extends HttpServlet
 
         log.severe("Everything OK, should send order");
         String returnString = UserParser.writeSingleUserToJSON(activeUser);
+        activeUser.cleanup();
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
         resp.getWriter().print(returnString);

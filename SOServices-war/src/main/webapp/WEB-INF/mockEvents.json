@@ -9,29 +9,30 @@
         "eventDescription": {
             "value": "Ha akadnak még Önnek fehér foltok Kőhalmi Zoltán életéből, esetleg éppen úgy érzi, mindent tud, vagy egyszerűen csak régóta vágyott rá,  itt a helye! Az ismert humoristát ezen az estén olyan  közelről ismerhetjük meg, ahogyan csak nagy formátumú bulvárszereplőket szokás. Kompromittáló felvételek, eltitkolt emlékek során Zoltán maga tart idegenvezetést életének múzeumában.Biztosan állítható,  hogy az előadás a saját nemében egyedülálló, hiszen még soha nem készült hasonló. A kitárulkozó önvallomás összművészeti élményt nyújt, feleslegessé téve ezzel bármely más kulturális esemény látogatást. A  nagy ívű előadásban lesz akció, izgalom, kisebb tömegjelenetek, állatidomítás (nem biztos), életvezetési tanácsok és minden, amit a Bocskai utca 8-ról tudni érdemes. Nevetés és leleplező információk az  egész családnak!"
         },
-        "location": 
-        {
-            "name" : "Budapest, Corvin",
-            "stageCenterX" : 160,
-"stageCenterY" : 400,
-"stageWidth" : 100,
-"stageHeight" : 20,
-            "tables" : 
-        [
-            {
-                "xPoint" : 40,
-                "yPoint" : 40,
-                "numberOfSeats" : 6,
-                "free" : true
-            },
-            {
-                "xPoint" : 160,
-                "yPoint" : 40,
-                "numberOfSeats" : 4,
-                "free" : false
-            }
-        ]
-        }
+        "location":
+                {
+                    "name": "Budapest, Corvin",
+                    "shortName": "bp_corvin",
+                    "stageCenterX": 160,
+                    "stageCenterY": 400,
+                    "stageWidth": 100,
+                    "stageHeight": 20,
+                    "tables":
+                            [
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                }
+                            ]
+                }
     },
     {
         "priority": 2,
@@ -43,29 +44,30 @@
         "eventDescription": {
             "value": "A tavalyi, nagysikerű pozsonyi José Carreras - Exkluzív Karácsonyi Koncertet követően idén Budepesten lesz a fantasztikus show, a Syma Rendezvényközpontban. Az Exkluzív Karácsonyi Koncerten 65 fős Kodály filharmónia és 40 tagú Kodály kórus kíséri José Carreras-t, mely egyedülálló műsornak ígérkezik. A maestróval továbbá fellép az ukrán származású Nataliya Kovalova is. "
         },
-        "location": 
-        {
-            "name" : "Budapest, Syma Rendezvénycsarnok",
-            "stageCenterX" : 160,
-"stageCenterY" : 400,
-"stageWidth" : 100,
-"stageHeight" : 20,
-            "tables" : 
-        [
-            {
-                "xPoint" : 40,
-                "yPoint" : 40,
-                "numberOfSeats" : 6,
-                "free" : true
-            },
-            {
-                "xPoint" : 160,
-                "yPoint" : 40,
-                "numberOfSeats" : 4,
-                "free" : false
-            }
-        ]
-        }
+        "location":
+                {
+                    "name": "Budapest, Syma Rendezvénycsarnok",
+                    "shortName": "bp_syma",
+                    "stageCenterX": 160,
+                    "stageCenterY": 400,
+                    "stageWidth": 100,
+                    "stageHeight": 20,
+                    "tables":
+                            [
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                }
+                            ]
+                }
     },
     {
         "priority": 2,
@@ -78,28 +80,29 @@
             "value": "Hamarosan a boltokba kerül a Junior Prima Díjas énekesnő, Guessous Majda Mária második lemeze ÖröMes címmel. Az ÖröMes nem jöhetett volna létre a Mesi Trió nélkül, melynek további tagjai Barvich Iván és Boros Gerzson Dávid, akik már három éve állandó zenésztársai a félig magyar félig marokkói énekesnőnek. Az esten bemutatkozik Tóth Szabolcs szitárművész is. "
         },
         "location":
-        {
-            "name" : "Budapest, Yunus Emre Intézet",
-            "stageCenterX" : 160,
-"stageCenterY" : 400,
-"stageWidth" : 100,
-"stageHeight" : 20,
-            "tables" : 
-        [
-            {
-                "xPoint" : 40,
-                "yPoint" : 40,
-                "numberOfSeats" : 6,
-                "free" : true
-            },
-            {
-                "xPoint" : 160,
-                "yPoint" : 40,
-                "numberOfSeats" : 4,
-                "free" : false
-            }
-        ]
-        }
+                {
+                    "name": "Budapest, Yunus Emre Intézet",
+                    "shortName": "bp_yunus",
+                    "stageCenterX": 160,
+                    "stageCenterY": 400,
+                    "stageWidth": 100,
+                    "stageHeight": 20,
+                    "tables":
+                            [
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                }
+                            ]
+                }
     },
     {
         "priority": 2,
@@ -112,28 +115,29 @@
             "value": "Bár az együttes fénykorában nem juthatott el Budapestre most végre élőben is táncolhatunk a régi dalokra: az idén 30 éves Camouflage Dürer-kert nagytermében szerepel. A németek előtt pedig a hazai Black Nail Cabaret koncertjét láthatjuk, mely elektronikus zenei kirándulásra hív a szintipop és a darkwave világába. "
         },
         "location":
-        {
-            "name" : "Budapest, Dürer-kert",
-            "stageCenterX" : 160,
-"stageCenterY" : 400,
-"stageWidth" : 100,
-"stageHeight" : 20,
-            "tables" : 
-        [
-            {
-                "xPoint" : 40,
-                "yPoint" : 40,
-                "numberOfSeats" : 6,
-                "free" : true
-            },
-            {
-                "xPoint" : 160,
-                "yPoint" : 40,
-                "numberOfSeats" : 4,
-                "free" : false
-            }
-        ]
-        }
+                {
+                    "name": "Budapest, Dürer-kert",
+                    "shortName": "bp_durer",
+                    "stageCenterX": 160,
+                    "stageCenterY": 400,
+                    "stageWidth": 100,
+                    "stageHeight": 20,
+                    "tables":
+                            [
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                }
+                            ]
+                }
     },
     {
         "priority": 2,
@@ -146,28 +150,29 @@
             "value": "A Kassák Múzeumban korábban rendszeresen voltak koncertek, most folytatódik ez a hagyomány. Az új sorozat a kortárs zenei életbe ad betekintést. Matuz Gergely fuvolaművész The Singing Ringing Tree című koncertjeinek darabjait Nagy Ákos zeneszerzővel közösen válogatta."
         },
         "location":
-        {
-            "name" : "Budapest, Kassák Múzeum",
-            "stageCenterX" : 160,
-"stageCenterY" : 400,
-"stageWidth" : 100,
-"stageHeight" : 20,
-            "tables" : 
-        [
-            {
-                "xPoint" : 40,
-                "yPoint" : 40,
-                "numberOfSeats" : 6,
-                "free" : true
-            },
-            {
-                "xPoint" : 160,
-                "yPoint" : 40,
-                "numberOfSeats" : 4,
-                "free" : false
-            }
-        ]
-        }
+                {
+                    "name": "Budapest, Kassák Múzeum",
+                    "shortName": "bp_kassak",
+                    "stageCenterX": 160,
+                    "stageCenterY": 400,
+                    "stageWidth": 100,
+                    "stageHeight": 20,
+                    "tables":
+                            [
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                }
+                            ]
+                }
     },
     {
         "priority": 2,
@@ -180,28 +185,29 @@
             "value": "A négy tagot számláló, yorkshire-i székhelyű Exit Calm csapata sosem volt a lassú munka híve. Mindössze 2 hónap együttzenélés után jelentették meg első nyers, igazán zsigeri demófelvételüket, és azonnal nyakukba vették a világot, hogy turnézni induljanak először Nagy-Britanniában, aztán egész Európában. Hamar híre ment energikus és euforikus, gyakran teljes extázisba fulladó koncertjeiknek."
         },
         "location":
-        {
-            "name" : "Budapest, Gozsdu Manó Klub",
-            "stageCenterX" : 160,
-"stageCenterY" : 400,
-"stageWidth" : 100,
-"stageHeight" : 20,
-            "tables" : 
-        [
-            {
-                "xPoint" : 40,
-                "yPoint" : 40,
-                "numberOfSeats" : 6,
-                "free" : true
-            },
-            {
-                "xPoint" : 160,
-                "yPoint" : 40,
-                "numberOfSeats" : 4,
-                "free" : false
-            }
-        ]
-        }
+                {
+                    "name": "Budapest, Gozsdu Manó Klub",
+                    "shortName": "bp_gozsdu",
+                    "stageCenterX": 160,
+                    "stageCenterY": 400,
+                    "stageWidth": 100,
+                    "stageHeight": 20,
+                    "tables":
+                            [
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                }
+                            ]
+                }
     },
     {
         "priority": 3,
@@ -214,28 +220,29 @@
             "value": "dsadsadsadsdsadasdsadsadsdsadsdasdsdasadsadsdasdas"
         },
         "location":
-        {
-            "name" : "Budapest, A38 Hajó",
-            "stageCenterX" : 160,
-"stageCenterY" : 400,
-"stageWidth" : 100,
-"stageHeight" : 20,
-            "tables" : 
-        [
-            {
-                "xPoint" : 40,
-                "yPoint" : 40,
-                "numberOfSeats" : 6,
-                "free" : true
-            },
-            {
-                "xPoint" : 160,
-                "yPoint" : 40,
-                "numberOfSeats" : 4,
-                "free" : false
-            }
-        ]
-        }
+                {
+                    "name": "Budapest, A38 Hajó",
+                    "shortName": "bp_a38",
+                    "stageCenterX": 160,
+                    "stageCenterY": 400,
+                    "stageWidth": 100,
+                    "stageHeight": 20,
+                    "tables":
+                            [
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                }
+                            ]
+                }
     },
     {
         "priority": 3,
@@ -248,27 +255,28 @@
             "value": "Az amerikai templomok hangulatát hozza Budapestre egy igazán különleges produkció december 29-én, kedden este a Syma Rendezvényközpontba. The Golden Voice of Gospel egy izgalmas turné keretében járja a világot, hogy hangszeres és tradicionális kórustémákon keresztül mutassa be a gospel szépségeit. 2000-es indulásakor a formációt megálmodó Dwight Robson Tiszteletes a gospel műfaj legjobb amerikai képviselőit hívta meg együttesébe. Hosszú út vezetett Missouri St. Louis gettójából a mostani világturnéig, amelyen Robson már elismert Tiszteletesként hirdetheti az élet szeretetét."
         },
         "location":
-        {
-            "name" : "Budapest, Syma Rendezvénycsarnok",
-            "stageCenterX" : 160,
-"stageCenterY" : 400,
-"stageWidth" : 100,
-"stageHeight" : 20,
-            "tables" : 
-        [
-            {
-                "xPoint" : 40,
-                "yPoint" : 40,
-                "numberOfSeats" : 6,
-                "free" : true
-            },
-            {
-                "xPoint" : 160,
-                "yPoint" : 40,
-                "numberOfSeats" : 4,
-                "free" : false
-            }
-        ]
-        }
+                {
+                    "name": "Budapest, Syma Rendezvénycsarnok",
+                    "shortName": "bp_syma",
+                    "stageCenterX": 160,
+                    "stageCenterY": 400,
+                    "stageWidth": 100,
+                    "stageHeight": 20,
+                    "tables":
+                            [
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                }
+                            ]
+                }
     }
 ]

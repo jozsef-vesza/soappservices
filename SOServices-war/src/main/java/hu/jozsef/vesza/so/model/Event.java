@@ -1,5 +1,6 @@
 package hu.jozsef.vesza.so.model;
 
+import com.google.appengine.api.datastore.Blob;
 import com.google.appengine.api.datastore.Text;
 import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
@@ -24,6 +25,7 @@ public class Event
     private Table selectedTable;
     @Id private Long identifier;
     private Ref<User> owner;
+    Blob image;
 
     public Event()
     {
@@ -175,5 +177,17 @@ public class Event
     {
         return owner;
     }
+
+    public void setImage(Blob image)
+    {
+        this.image = image;
+    }
+
+    public Blob getImage()
+    {
+        return image;
+    }
+    
+    
 
 }

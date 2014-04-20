@@ -8,76 +8,90 @@ import com.googlecode.objectify.annotation.Id;
 @Entity
 public class Location
 {
-	@Id private Long identifier;
-	private String name;
-	private double stageCenterX;
-	private double stageCenterY;
-	private double stageWidth;
-	private double stageHeight;
-	private List<Table> tables;
 
-	public String getName()
-	{
-		return name;
-	}
+    @Id
+    private Long identifier;
+    private String name;
+    private String shortName;
+    private double stageCenterX;
+    private double stageCenterY;
+    private double stageWidth;
+    private double stageHeight;
+    private List<Table> tables;
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+    public String getName()
+    {
+        return name;
+    }
 
-	public List<Table> getTables()
-	{
-		return tables;
-	}
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
-	public void setTables(List<Table> tables)
-	{
-		this.tables = tables;
-	}
+    public List<Table> getTables()
+    {
+        return tables;
+    }
 
-	public Long getIdentifier()
-	{
-		return identifier;
-	}
+    public void setTables(List<Table> tables)
+    {
+        this.tables = tables;
+    }
 
-	public double getStageCenterX()
-	{
-		return stageCenterX;
-	}
+    public Long getIdentifier()
+    {
+        return identifier;
+    }
 
-	public void setStageCenterX(double stageCenter)
-	{
-		this.stageCenterX = stageCenter;
-	}
+    public double getStageCenterX()
+    {
+        return stageCenterX;
+    }
 
-	public double getStageCenterY()
-	{
-		return stageCenterY;
-	}
+    public void setStageCenterX(double stageCenter)
+    {
+        this.stageCenterX = stageCenter;
+    }
 
-	public void setStageCenterY(double stageCenterY)
-	{
-		this.stageCenterY = stageCenterY;
-	}
+    public double getStageCenterY()
+    {
+        return stageCenterY;
+    }
 
-	public double getStageWidth()
-	{
-		return stageWidth;
-	}
+    public void setStageCenterY(double stageCenterY)
+    {
+        this.stageCenterY = stageCenterY;
+    }
 
-	public void setStageWidth(double stageWidth)
-	{
-		this.stageWidth = stageWidth;
-	}
+    public double getStageWidth()
+    {
+        return stageWidth;
+    }
 
-	public double getStageHeight()
-	{
-		return stageHeight;
-	}
+    public void setStageWidth(double stageWidth)
+    {
+        this.stageWidth = stageWidth;
+    }
 
-	public void setStageHeight(double stageHeight)
-	{
-		this.stageHeight = stageHeight;
-	}
+    public double getStageHeight()
+    {
+        return stageHeight;
+    }
+
+    public void setStageHeight(double stageHeight)
+    {
+        this.stageHeight = stageHeight;
+    }
+
+    public String getShortName()
+    {
+        return shortName;
+    }
+
+    public void setShortName(String shortName)
+    {
+        this.shortName = shortName;
+    }
+
 }

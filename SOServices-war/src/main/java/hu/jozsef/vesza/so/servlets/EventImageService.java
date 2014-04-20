@@ -28,9 +28,10 @@ import org.apache.commons.io.IOUtils;
  */
 public class EventImageService extends HttpServlet
 {
+
     private static final Logger log = Logger.getLogger(EventManagerServlet.class.getName());
     Objectify objectify = OfyService.ofy();
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
@@ -40,10 +41,18 @@ public class EventImageService extends HttpServlet
         String imageUrl = "/WEB-INF/" + fetchedEvent.getLocation().getShortName() + ".png";
         String imageRealPath = this.getServletContext().getRealPath(imageUrl);
         InputStream imgStream = new FileInputStream(new File(imageRealPath));
-        
+
         Blob image = new Blob(IOUtils.toByteArray(imgStream));
-        response.setContentType("image/jpeg");
-        response.getOutputStream().write(image.getBytes());
+        if (image != null)
+        {
+            response.setContentType("image/jpeg");
+            response.getOutputStream().write(image.getBytes());
+        }
+        else
+        {
+            response.getWriter().write("no image");
+        }
+
     }
 
 }

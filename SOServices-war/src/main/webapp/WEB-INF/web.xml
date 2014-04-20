@@ -49,12 +49,16 @@
         <servlet-class>hu.jozsef.vesza.so.servlets.MealPaymentManagerServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EventImageService</servlet-name>
-        <servlet-class>hu.jozsef.vesza.so.servlets.EventImageService</servlet-class>
+        <servlet-name>LocationImageService</servlet-name>
+        <servlet-class>hu.jozsef.vesza.so.servlets.LocationImageService</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Meal Image</servlet-name>
         <servlet-class>hu.jozsef.vesza.so.servlets.MealImageService</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Event Image</servlet-name>
+        <servlet-class>hu.jozsef.vesza.so.servlets.EventImageService</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Event Manager</servlet-name>
@@ -97,12 +101,16 @@
         <url-pattern>/mealpaymentmanager</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>EventImageService</servlet-name>
-        <url-pattern>/soservices/eventimageservice</url-pattern>
+        <servlet-name>LocationImageService</servlet-name>
+        <url-pattern>/soservices/locationimageservice</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Meal Image</servlet-name>
         <url-pattern>/soservices/mealimageservice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Event Image</servlet-name>
+        <url-pattern>/soservices/eventimageservice</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>

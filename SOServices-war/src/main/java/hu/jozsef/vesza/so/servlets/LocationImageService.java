@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -25,7 +26,7 @@ import org.apache.commons.io.IOUtils;
  *
  * @author József
  */
-public class EventImageService extends HttpServlet
+public class LocationImageService extends HttpServlet
 {
 
     private static final Logger log = Logger.getLogger(EventManagerServlet.class.getName());
@@ -37,8 +38,7 @@ public class EventImageService extends HttpServlet
     {
         Long eventId = new Long(request.getParameter("identifier"));
         Event fetchedEvent = objectify.load().type(Event.class).id(eventId).now();
-        
-        String imageUrl = "/WEB-INF/" + fetchedEvent.getShortTitle() + ".png";
+        String imageUrl = "/WEB-INF/" + fetchedEvent.getLocation().getShortName() + ".png";
         String imageRealPath = this.getServletContext().getRealPath(imageUrl);
         InputStream imgStream = new FileInputStream(new File(imageRealPath));
 
@@ -52,6 +52,7 @@ public class EventImageService extends HttpServlet
         {
             response.getWriter().write("no image");
         }
+
     }
 
 }

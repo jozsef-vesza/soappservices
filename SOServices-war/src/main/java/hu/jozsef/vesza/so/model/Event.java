@@ -23,6 +23,7 @@ public class Event
     private boolean isPaid;
     private int priority;
     private Table selectedTable;
+    private String shortTitle;
     @Id private Long identifier;
     private Ref<User> owner;
     Blob image;
@@ -187,6 +188,18 @@ public class Event
     {
         return image;
     }
+
+    public void setShortTitle(String shortTitle)
+    {
+        this.shortTitle = shortTitle;
+    }
+
+    public String getShortTitle()
+    {
+        return shortTitle;
+    }
+    
+    
     
     
 

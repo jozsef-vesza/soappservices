@@ -6,7 +6,7 @@
     "rating": 1,
     "totalRatings": 5,
     "category": "starter",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/872/00001_63958_400x300_normal.jpg"
+    "image" : "cezarsalata.jpg"
   },
   {
     "name": "Görög saláta",
@@ -15,7 +15,7 @@
     "rating": 4,
     "totalRatings": 10,
     "category": "starter",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/92/00001_78490_400x300_normal.jpg"
+    "image" : "gorogsalata.jpg"
   },
   {
     "name": "Grillezett kecskesajt",
@@ -24,7 +24,7 @@
     "rating": 4,
     "totalRatings": 4,
     "category": "starter",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/995/00001_23024_400x300_normal.jpg"
+    "image" : "grillezettkecskesajt.jpg"
   },
   {
     "name": "Hideg gyümölcsleves",
@@ -33,7 +33,7 @@
     "rating": 5,
     "totalRatings": 100,
     "category": "soup",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/249/00001_97010_400x300_normal.jpg"
+    "image" : "hideggyumolcsleves.jpg"
   },
   {
     "name": "Húsleves gazdagon",
@@ -42,7 +42,7 @@
     "rating": 3,
     "totalRatings": 30,
     "category": "soup",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/417/00001_23841_400x300_normal.jpg"
+    "image" : "husleves.jpg"
   },
   {
     "name": "Angolmustáros tarjaszelet",
@@ -51,7 +51,7 @@
     "rating": 4,
     "totalRatings": 10,
     "category": "main",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/120/00001_12999_400x300_normal.jpg"
+    "image" : "angolmustaros.jpg"
   },
   {
     "name": "Baconos csirkenyárs",
@@ -60,7 +60,7 @@
     "rating": 5,
     "totalRatings": 22,
     "category": "main",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/121/00001_41473_400x300_normal.jpg"
+    "image" : "baconoscsirkenyars.jpg"
   },
   {
     "name": "Bajor szűzpecsenye",
@@ -69,7 +69,7 @@
     "rating": 3,
     "totalRatings": 9,
     "category": "main",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/122/00001_50577_400x300_normal.jpg"
+    "image" : "bajorszuzpecsenye.jpg"
   },
   {
     "name": "Édes chilis csirkeszárny",
@@ -78,7 +78,7 @@
     "rating": 4,
     "totalRatings": 567,
     "category": "main",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/998/00001_24792_400x300_normal.jpg"
+    "image" : "edeschilis.jpg"
   },
   {
     "name": "Gesztenyepüré",
@@ -87,7 +87,7 @@
     "rating": 3,
     "totalRatings": 32,
     "category": "dessert",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/174/00002_24408_400x300_normal.jpg"
+    "image" : "gesztenyepure.jpg"
   },
   {
     "name": "Túrós palacsinta vanília öntettel",
@@ -96,7 +96,7 @@
     "rating": 5,
     "totalRatings": 43,
     "category": "dessert",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/181/00001_39278_400x300_normal.jpg"
+    "image" : "turospali.jpg"
   },
   {
     "name": "Sárgabarack lekváros palacsinta ",
@@ -105,7 +105,7 @@
     "rating": 4,
     "totalRatings": 15,
     "category": "dessert",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/179/00001_20812_400x300_normal.jpg"
+    "image" : "sargabarackpali.jpg"
   },
   {
     "name": "Somlói galuska",
@@ -114,7 +114,7 @@
     "rating": 5,
     "totalRatings": 4,
     "category": "dessert",
-    "image" : "http://www.trofeaonline.com/Content/webshop_items/180/00001_28737_400x300_normal.jpg"
+    "image" : "somloi.jpg"
   },
   {
     "name": "Almalé - 1,5 L",

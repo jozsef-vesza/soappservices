@@ -37,14 +37,6 @@
         <servlet-class>hu.jozsef.vesza.so.servlets.MealRatingManagerServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UserManager</servlet-name>
-        <servlet-class>hu.jozsef.vesza.so.servlets.UserManager</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>MealRatingManagerServlet</servlet-name>
-        <servlet-class>hu.jozsef.vesza.so.servlets.MealRatingManagerServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>MealPaymentManagerServlet</servlet-name>
         <servlet-class>hu.jozsef.vesza.so.servlets.MealPaymentManagerServlet</servlet-class>
     </servlet>
@@ -87,14 +79,6 @@
     <servlet-mapping>
         <servlet-name>Meal Payment Manager</servlet-name>
         <url-pattern>/soservices/mealpaymentmanager</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UserManager</servlet-name>
-        <url-pattern>/usermanager</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MealRatingManagerServlet</servlet-name>
-        <url-pattern>/mealratingmanager</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MealPaymentManagerServlet</servlet-name>

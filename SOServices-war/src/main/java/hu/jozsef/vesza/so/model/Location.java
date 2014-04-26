@@ -5,20 +5,39 @@ import java.util.List;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
+/**
+ * Class representation of an event location
+ * @author József
+ */
 @Entity
 public class Location
 {
-
-    @Id
-    private Long identifier;
+    /**
+     * Datastore idenfifier of a location
+     */
+    @Id private Long identifier;
+    
+    /**
+     * Name of a location
+     */
     private String name;
+    
+    /**
+     * Short name for easy resource access
+     */
     private String shortName;
     private double stageCenterX;
     private double stageCenterY;
     private double stageWidth;
     private double stageHeight;
+    
+    /**
+     * List of tables at a given location
+     */
     private List<Table> tables;
 
+    /** ACCESSOR METHODS **/
+    
     public String getName()
     {
         return name;

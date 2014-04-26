@@ -19,8 +19,7 @@ public class Meal
     private boolean isPaid;
     private int amount;
     private String image;
-    @Id
-    private Long identifier;
+    @Id private Long identifier;
     private Ref<User> owner;
 
     public Meal()

@@ -46,10 +46,10 @@ public class MealRatingManagerServlet extends HttpServlet
                 if (name.equals(fetchedMeal.getName()))
                 {
                     log.log(Level.SEVERE, "Updating ratig for meal: {0}", fetchedMeal.getName());
-                    int avgRating = fetchedMeal.getRating() / fetchedMeal.getTotalRatings();
+                    int total = fetchedMeal.getRating() * fetchedMeal.getTotalRatings();
                     fetchedMeal.setTotalRatings(fetchedMeal.getTotalRatings() + 1);
-                    avgRating += rating;
-                    fetchedMeal.setRating(avgRating / fetchedMeal.getTotalRatings());
+                    total += rating;
+                    fetchedMeal.setRating(total / fetchedMeal.getTotalRatings());
                     log.severe("Everything OK, meal rating updated");
                     objectify.save().entities(fetchedMeal).now();
                 }

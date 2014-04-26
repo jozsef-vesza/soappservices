@@ -8,30 +8,100 @@ import com.googlecode.objectify.annotation.Id;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ * Class representation of an event
+ * @author József
+ */
 @Entity
 public class Event
 {
 
+    /**
+     * The title of an event
+     */
+    
     private String eventTitle;
+    /**
+     * The date of an event
+     */
+    
     private Date eventDate;
+    /**
+     * The duration of an event
+     */
     private int eventDuration;
+    
+    /**
+     * The number of tickets available for an event
+     */
     private int ticketsLeft;
+    
+    /**
+     * Description of an event
+     */
     private Text eventDescription;
+    
+    /**
+     * Price of tickets
+     */
     private int ticketPrice;
+    
+    /**
+     * Location of an event
+     */
     private Location location;
+    
+    /**
+     * Number of tickets purchased by user to an event
+     */
     private int ticketsPurchased;
+    
+    /**
+     * Order status indicator
+     */
     private boolean isPaid;
+    
+    /**
+     * Priority of an event
+     */
     private int priority;
+    
+    /**
+     * The table reserved by the user
+     */
     private Table selectedTable;
+    
+    /**
+     * Short title for easy resource access
+     */
     private String shortTitle;
+    
+    /**
+     * Datastore identifier
+     */
     @Id private Long identifier;
+    
+    /**
+     * The user who orderet the ticket
+     */
     private Ref<User> owner;
+    
+    /**
+     * The promotional image for an event
+     */
     Blob image;
 
+    /**
+     * Empty default constructor
+     */
     public Event()
     {
     }
 
+    /**
+     * Custom constructor for copying an event
+     * @param anEvent the event to copy
+     */
     public Event(Event anEvent)
     {
         this.eventTitle = anEvent.eventTitle;
@@ -48,6 +118,10 @@ public class Event
         this.identifier = (1000000 + randomGenerator.nextInt(10000000)) + randomGenerator.nextLong();
     }
 
+    /**
+     * Set the selected item for a reserved ticket
+     * @param tableId identifier of a table reserved by the user
+     */
     public void setSelectedTable(Long tableId)
     {
         for (Table table : this.location.getTables())
@@ -59,6 +133,8 @@ public class Event
         }
     }
 
+    /** ACCESSOR METHODS **/
+    
     public String getEventTitle()
     {
         return eventTitle;

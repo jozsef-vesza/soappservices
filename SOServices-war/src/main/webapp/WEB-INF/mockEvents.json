@@ -27,10 +27,88 @@
                                     "free": true
                                 },
                                 {
-                                    "xPoint": 160,
+                                    "xPoint": 120,
                                     "yPoint": 40,
                                     "numberOfSeats": 4,
                                     "free": false
+                                },
+                                {
+                                    "xPoint": 200,
+                                    "yPoint": 40,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 80,
+                                    "yPoint": 100,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 100,
+                                    "numberOfSeats": 4,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 240,
+                                    "yPoint": 100,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 160,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                },
+                                {
+                                    "xPoint": 120,
+                                    "yPoint": 160,
+                                    "numberOfSeats": 4,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 200,
+                                    "yPoint": 160,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 80,
+                                    "yPoint": 220,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                },
+                                {
+                                    "xPoint": 160,
+                                    "yPoint": 220,
+                                    "numberOfSeats": 4,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 240,
+                                    "yPoint": 220,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 40,
+                                    "yPoint": 280,
+                                    "numberOfSeats": 6,
+                                    "free": true
+                                },
+                                {
+                                    "xPoint": 120,
+                                    "yPoint": 280,
+                                    "numberOfSeats": 4,
+                                    "free": false
+                                },
+                                {
+                                    "xPoint": 200,
+                                    "yPoint": 280,
+                                    "numberOfSeats": 6,
+                                    "free": true
                                 }
                             ]
                 }

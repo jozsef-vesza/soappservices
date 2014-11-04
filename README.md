@@ -1,4 +1,6 @@
-appengine-skeleton
+Self Ordering App Servies
 =============================
 
-This is a generated application from the appengine-skeleton archetype.
+Client-side implementation of university thesis project, hosted in Google App Engine.
+
+See [client-side code](https://github.com/jozsef-vesza/Self-Ordering-App)
